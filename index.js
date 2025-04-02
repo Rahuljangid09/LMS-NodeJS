@@ -1,5 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose");
+require('dotenv').config();
+const mongoose = require('mongoose');
 const path = require("path");
 const bcrypt = require("bcryptjs");
 const methodOverride = require('method-override');
@@ -37,10 +38,12 @@ app.use((req, res, next) => {
 
 
 
-mongoose
-  .connect("mongodb://localhost:27017/LMS")
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log("MongoDB connection error:", err));
+
+
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log('MongoDB connected successfully'))
+.catch(err => console.error('MongoDB connection error:', err));
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);

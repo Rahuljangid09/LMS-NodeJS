@@ -1,10 +1,11 @@
-const mongoose = require("mongoose");
+require('dotenv').config();
+const mongoose = require('mongoose');
 const bcrypt = require("bcryptjs");
 const { User } = require("./models/user");
 
-mongoose.connect("mongodb://localhost:27017/LMS")
-    .then(async () => {
-        console.log("MongoDB Connected");
+mongoose.connect(process.env.MONGO_URI)
+.then( async()=>{
+
 
         let admin = await User.findOne({ username: "admin" });
 

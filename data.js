@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+require('dotenv').config();
+const mongoose = require('mongoose');
 const bcrypt = require("bcryptjs");
 const { User, Book } = require("./models/user.js");
 
@@ -32,8 +33,9 @@ const sampleBooks = [
 
 const seedDatabase = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/LMS");
-    console.log("Connected to MongoDB");
+    mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('MongoDB connected successfully'))
+    .catch(err => console.error('MongoDB connection error:', err));
 
     await User.deleteMany();
     await Book.deleteMany();
