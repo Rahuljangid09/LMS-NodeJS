@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadersPage</title>
+    <link rel="stylesheet" href="/readers.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>We have no. of users</h1>
+        <div class="readers">
+            <% for(let allUser of allUsers){ %>
+                <div class="reader-block">
+                    <h2><%=allUser.username.toUpperCase()%></h2>
+                    <p>Borrowed:<%= allUser.borrowedBooks.length %></p>
+                    <form action="/readers/remove/<%= allUser._id %>?_method=DELETE" method="POST">
+                        <button type="submit">Remove user</button>
+                    </form>
+                </div>
+            <% } %>    
+        </div>
+    </div>
+    
+</body>
+</html>

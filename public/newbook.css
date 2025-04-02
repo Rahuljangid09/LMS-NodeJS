@@ -1,0 +1,93 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 500px; /* Adjusted for better width */
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+h1 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+
+.datails {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+
+.datails form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Headings inside the details section */
+.datails h3 {
+    font-size: 16px;
+    color: #444;
+    margin: 0;
+}
+
+/* Input and textarea styling */
+.datails input, .datails textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.datails input:focus, .datails textarea:focus {
+    border-color: #007bff;
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Improved responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        max-width: 90%;
+        padding: 20px;
+    }
+}

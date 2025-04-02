@@ -1,0 +1,99 @@
+
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(to right, #e3f2fd, #90caf9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 10px;
+}
+
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 550px;  
+}
+
+
+h2 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+h3 {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 550px;
+}
+
+
+.login, .register {
+  padding: 15px;
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 250px;
+}
+
+
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+input:focus {
+  border: 1px solid #007bff;
+}
+
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+  .auth {
+    flex-direction: row;
+  }
+
+  .login, .register {
+    flex: 1;
+    max-width: 48%;
+  }
+}

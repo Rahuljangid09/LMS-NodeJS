@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fa;
+    color: #333;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Container Styles */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .admin-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Flexbox Layout */
+  .admin-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .book-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .book-item h3 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #333;
+  }
+
+  .book-item p {
+    margin: 10px 0;
+  }
+
+  .remove-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+
+  .remove-btn:hover {
+    background-color: darkred;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .admin-actions {
+      flex-direction: column;
+    }
+
+    .book-item {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    button {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+    }
+
+    .book-item h3 {
+      font-size: 1.1rem;
+    }
+  }

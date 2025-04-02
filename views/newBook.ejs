@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Book</title>
+    <link rel="stylesheet" href="/newbook.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Details of New Book!</h1>
+        <div class="datails">
+            <form action="/newbook" method="post">
+            <h3>Book Title:</h3>
+            <input type="text" name="title" placeholder="Enter title">
+            <h3>Author of Book:</h3>
+            <input type="text" name="author" placeholder="Enter name of author">
+            <h3>Number of copies:</h3>
+            <input type="number" name="copies">
+            <h3>Description:</h3>
+            <textarea name="description" placeholder="Any thing about this book" cols="30" rows="5"></textarea>
+            <button>Add</button>
+        </form>
+        </div>
+    </div>
+</body>
+</html>

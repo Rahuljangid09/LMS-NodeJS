@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="/user.css">
+  </head>
+  <body>
+
+    <h1>Hi👋, <%= user.username %></h1>
+    <p>You have <%= user.borrowedBooks.length %> books</p>
+    <form action="/auth" ><Button style="border: 0px; border-radius: 2px; height: 25px; width: 40; background-color: rgb(241, 111, 111);  ">Logout</Button></form>
+    
+    <h2>Your Borrowed Books</h2>
+    <div class="borrowed-container">
+        <% if (user.borrowedBooks.length > 0) { %>
+            <% for (let borrowedBook of user.borrowedBooks) { %>
+                <div class="borrow" >
+                    <h3><%= borrowedBook.title %></h3>
+                    <p>Author: <%= borrowedBook.author %></p>
+                    <form action="/return/<%=borrowedBook._id%>" method="post">
+                      <input type="hidden" name="userId" value="<%= user._id %>">
+                      <button>Return</button></form>
+                </div>
+            <% } %>
+        <% } else { %>
+            <p>You haven't borrowed any books yet.</p>
+        <% } %>
+    </div>
+
+    <h2>Available Books</h2>
+    <div class="container">
+        <% for (let allBook of allBooks) { %>
+        <div class="book" >
+            <h3><%= allBook.title %></h3>
+            <p>Author: <%= allBook.author %></p>
+            <p>Copies Available: <%= allBook.copiesAvailable %></p>
+            <form action="/borrow/<%= allBook._id %>" method="post">
+              <input type="hidden" name="userId" value="<%= user._id %>"> 
+              <button type="submit">Borrow</button>
+          </form>
+          
+        </div>
+        <% } %>
+    </div>
+  </body>
+</html>
